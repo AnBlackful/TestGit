@@ -7,12 +7,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var rightButton: UIButton!
     @IBOutlet weak var setTextButton: UIButton!
-    @IBOutlet weak var defaultTextButton: UIButton!
     
     @IBOutlet var phraseButtonsCollection: [UIButton]!
-    @IBOutlet weak var firstPhraseButton: UIButton!
-    @IBOutlet weak var secondPhraseButton: UIButton!
-    @IBOutlet weak var thirdPhraseButton: UIButton!
+
     
     @IBOutlet weak var textField: UITextField!
     
@@ -21,67 +18,31 @@ class ViewController: UIViewController {
         self.doButtonGood()
         Single.shared.makeArray()
         self.setTags()
-        self.textLabel.text = Single.shared.strArray?[0]
+        self.textLabel.text = Single.shared.strArray[0]
     }
     
-    @IBAction func phraseButtonPressed(_ sender: UIButton) {
+    //MARK: - IBActions
+    @IBAction func phraseCollectionButtonPressed(_ sender: UIButton) {
         Single.shared.str = Single.shared.phraseArray[sender.tag]
         self.setFirstWord()
     }
-    //MARK: - IBActions
     @IBAction func setTextButtonPressed(_ sender: UIButton) {
         Single.shared.str = textField.text!
         self.setFirstWord()
     }
-    @IBAction func defaultTextButtonPressed(_ sender: UIButton) {
-        Single.shared.str = "Съешь же ещё этих мягких французских булок, да выпей чаю"
-        self.setFirstWord()
-    }
-    @IBAction func firstPhraseButtonPressed(_ sender: UIButton) {
-        Single.shared.str = "Тут могла быть Ваша реклама"
-        self.setFirstWord()
-    }
-    @IBAction func secondPhraseButtonPressed(_ sender: UIButton) {
-        Single.shared.str = "Верно лошадь батарея скрепка"
-        self.setFirstWord()
-    }
-    @IBAction func thirdPhraseButtonPressed(_ sender: UIButton) {
-        Single.shared.str = "Чем больше знаешь, тем меньше знаешь"
-        self.setFirstWord()
-    }
-    
+//    @IBAction func defaultTextButtonPressed(_ sender: UIButton) {
+//        Single.shared.str = Single.shared.phraseArray[0]
+//        self.setFirstWord()
+//    }
     
     @IBAction func leftButtonPressed(_ sender: UIButton) {
-        self.goLeft()
+        textLabel.text = Single.shared.goLeft()
     }
     @IBAction func rightButtonPressed(_ sender: UIButton) {
-        self.goRight()
+        textLabel.text = Single.shared.goRight()
     }
     
-    
-    //MARK: - Side Buttons
-    func goRight(){
-        let size = Single.shared.strArray?.count
-        Single.shared.index+=1
-        if Single.shared.index != size {
-            textLabel.text = Single.shared.strArray?[Single.shared.index]
-        }else {
-            Single.shared.index = 0
-            textLabel.text = Single.shared.strArray?[0]
-        }
-        
-    }
-    func goLeft(){
-        let size = Single.shared.strArray?.count
-        Single.shared.index-=1
-        if Single.shared.index != -1 {
-            textLabel.text = Single.shared.strArray?[Single.shared.index]
-        }else {
-            Single.shared.index = size!-1
-            textLabel.text = Single.shared.strArray?[size!-1]
-        }
-        
-    }
+
     //MARK: - Other Func
     func setTags(){
         var count = 0
@@ -94,7 +55,7 @@ class ViewController: UIViewController {
     func setFirstWord() {
         Single.shared.makeArray()
         Single.shared.index = 0
-        textLabel.text = Single.shared.strArray?[0]
+        textLabel.text = Single.shared.strArray[0]
         textField.text = nil
         textField.resignFirstResponder()
     }
@@ -108,16 +69,13 @@ class ViewController: UIViewController {
         rightButton.layer.cornerRadius = 15
         setTextButton.layer.borderWidth = 1
         setTextButton.layer.cornerRadius = 10
-        defaultTextButton.layer.borderWidth = 1
-        defaultTextButton.layer.cornerRadius = 10
         textField.layer.borderWidth = 1
         textField.layer.cornerRadius = 3
-        firstPhraseButton.layer.borderWidth = 1
-        firstPhraseButton.layer.cornerRadius = 25
-        secondPhraseButton.layer.borderWidth = 1
-        secondPhraseButton.layer.cornerRadius = 25
-        thirdPhraseButton.layer.borderWidth = 1
-        thirdPhraseButton.layer.cornerRadius = 25
-        
+        for button in phraseButtonsCollection{
+            button.layer.borderWidth = 1
+            button.layer.cornerRadius = 25
+        }
+        self.phraseButtonsCollection[0].layer.borderWidth = 1
+        self.phraseButtonsCollection[0].layer.cornerRadius = 10
     }
 }

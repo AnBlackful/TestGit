@@ -67,7 +67,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="defaultTextButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ArY-ie-g2d"/>
+                                    <action selector="phraseCollectionButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6kH-7M-fEV"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Phrase library" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXN-7I-xKz">
@@ -85,8 +85,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="firstPhraseButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p8E-hE-VK1"/>
-                                    <action selector="phraseButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7f5-Ph-29G"/>
+                                    <action selector="phraseCollectionButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RZo-FM-4G4"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJL-5k-Vdo">
@@ -97,8 +96,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="phraseButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5zL-67-QD1"/>
-                                    <action selector="secondPhraseButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6az-QY-yxn"/>
+                                    <action selector="phraseCollectionButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BCq-IE-UhY"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CIO-Nq-BHL">
@@ -109,8 +107,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="phraseButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tiW-Yg-ChD"/>
-                                    <action selector="thirdPhraseButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rkb-C5-PJ2"/>
+                                    <action selector="phraseCollectionButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DRX-Ml-Ii8"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0I-FI-9qe">
@@ -125,16 +122,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="defaultTextButton" destination="taR-rR-qvE" id="Zv4-Ds-ETt"/>
-                        <outlet property="firstPhraseButton" destination="ETU-yU-efg" id="0Ua-fE-jhZ"/>
                         <outlet property="leftButton" destination="6JA-5Z-jEq" id="eAs-pt-WTn"/>
                         <outlet property="libTextLabel" destination="bXN-7I-xKz" id="UL4-WD-RVt"/>
                         <outlet property="rightButton" destination="FSA-AO-UJe" id="8BC-Jm-ohk"/>
-                        <outlet property="secondPhraseButton" destination="ZJL-5k-Vdo" id="gCg-t6-mBy"/>
                         <outlet property="setTextButton" destination="efM-oh-kjd" id="bdM-70-bno"/>
                         <outlet property="textField" destination="GbK-A2-Bk6" id="ylC-xL-iHg"/>
                         <outlet property="textLabel" destination="N0I-FI-9qe" id="9am-00-lUv"/>
-                        <outlet property="thirdPhraseButton" destination="CIO-Nq-BHL" id="LU5-tv-cXI"/>
                         <outletCollection property="phraseButtonsCollection" destination="taR-rR-qvE" collectionClass="NSMutableArray" id="fxd-6c-Hr2"/>
                         <outletCollection property="phraseButtonsCollection" destination="ETU-yU-efg" collectionClass="NSMutableArray" id="Vu7-qQ-snR"/>
                         <outletCollection property="phraseButtonsCollection" destination="ZJL-5k-Vdo" collectionClass="NSMutableArray" id="1QL-dM-rxw"/>
