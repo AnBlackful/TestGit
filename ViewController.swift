@@ -3,15 +3,14 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var libTextLabel: UILabel!
-    
+    @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var rightButton: UIButton!
     @IBOutlet weak var setTextButton: UIButton!
     
     @IBOutlet var phraseButtonsCollection: [UIButton]!
 
-    
-    @IBOutlet weak var textField: UITextField!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,10 +29,7 @@ class ViewController: UIViewController {
         Single.shared.str = textField.text!
         self.setFirstWord()
     }
-//    @IBAction func defaultTextButtonPressed(_ sender: UIButton) {
-//        Single.shared.str = Single.shared.phraseArray[0]
-//        self.setFirstWord()
-//    }
+
     
     @IBAction func leftButtonPressed(_ sender: UIButton) {
         textLabel.text = Single.shared.goLeft()
