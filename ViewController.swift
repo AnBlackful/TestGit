@@ -53,9 +53,7 @@ class ViewController: UIViewController {
     }
     
     func setFirstWord() {
-        Single.shared.makeArray()
-        Single.shared.index = 0
-        textLabel.text = Single.shared.strArray[0]
+        textLabel.text = Single.shared.setFirstWord()
         textField.text = nil
         textField.resignFirstResponder()
     }

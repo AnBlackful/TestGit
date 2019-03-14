@@ -34,5 +34,11 @@ class Single: NSObject{
             return strArray[index]
         }
     }
+    
+    func setFirstWord() -> String{
+        self.makeArray()
+        self.index = 0
+        return strArray[index]
+    }
 }
 
