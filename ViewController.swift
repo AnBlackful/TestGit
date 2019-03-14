@@ -9,6 +9,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var setTextButton: UIButton!
     @IBOutlet weak var defaultTextButton: UIButton!
     
+    @IBOutlet var phraseButtonsCollection: [UIButton]!
     @IBOutlet weak var firstPhraseButton: UIButton!
     @IBOutlet weak var secondPhraseButton: UIButton!
     @IBOutlet weak var thirdPhraseButton: UIButton!
@@ -19,7 +20,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.doButtonGood()
         Single.shared.makeArray()
-        textLabel.text = Single.shared.strArray?[0]
+        self.setTags()
+        self.textLabel.text = Single.shared.strArray?[0]
+    }
+    
+    @IBAction func phraseButtonPressed(_ sender: UIButton) {
+        Single.shared.str = Single.shared.phraseArray[sender.tag]
+        self.setFirstWord()
     }
     //MARK: - IBActions
     @IBAction func setTextButtonPressed(_ sender: UIButton) {
@@ -42,6 +49,7 @@ class ViewController: UIViewController {
         Single.shared.str = "Чем больше знаешь, тем меньше знаешь"
         self.setFirstWord()
     }
+    
     
     @IBAction func leftButtonPressed(_ sender: UIButton) {
         self.goLeft()
@@ -75,6 +83,14 @@ class ViewController: UIViewController {
         
     }
     //MARK: - Other Func
+    func setTags(){
+        var count = 0
+        for button in phraseButtonsCollection{
+            button.tag = count
+            count+=1
+        }
+    }
+    
     func setFirstWord() {
         Single.shared.makeArray()
         Single.shared.index = 0

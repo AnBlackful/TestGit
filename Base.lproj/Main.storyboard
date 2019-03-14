@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -86,6 +86,7 @@
                                 </state>
                                 <connections>
                                     <action selector="firstPhraseButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p8E-hE-VK1"/>
+                                    <action selector="phraseButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7f5-Ph-29G"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJL-5k-Vdo">
@@ -96,6 +97,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="phraseButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5zL-67-QD1"/>
                                     <action selector="secondPhraseButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6az-QY-yxn"/>
                                 </connections>
                             </button>
@@ -107,6 +109,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="phraseButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tiW-Yg-ChD"/>
                                     <action selector="thirdPhraseButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rkb-C5-PJ2"/>
                                 </connections>
                             </button>
@@ -132,6 +135,10 @@
                         <outlet property="textField" destination="GbK-A2-Bk6" id="ylC-xL-iHg"/>
                         <outlet property="textLabel" destination="N0I-FI-9qe" id="9am-00-lUv"/>
                         <outlet property="thirdPhraseButton" destination="CIO-Nq-BHL" id="LU5-tv-cXI"/>
+                        <outletCollection property="phraseButtonsCollection" destination="taR-rR-qvE" collectionClass="NSMutableArray" id="fxd-6c-Hr2"/>
+                        <outletCollection property="phraseButtonsCollection" destination="ETU-yU-efg" collectionClass="NSMutableArray" id="Vu7-qQ-snR"/>
+                        <outletCollection property="phraseButtonsCollection" destination="ZJL-5k-Vdo" collectionClass="NSMutableArray" id="1QL-dM-rxw"/>
+                        <outletCollection property="phraseButtonsCollection" destination="CIO-Nq-BHL" collectionClass="NSMutableArray" id="O0Y-yI-h20"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
